@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol - Qr Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="qrcodebg.mp4" type="video/mp4">
+      </video>
+     
+      <a  class="logo" target="_blank">
+        <h1>QR Code Generator</h1>
+      </a>
+    
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" style="color: hsl(120, 100%, 25%);">
+        <label for="menu-icon"></label>
+        <nav class="nav" style="color: hsl(120, 100%, 25%);">     
+          <ul class="pt-5">
+            <li><a href="index.html">About</a></li>
+            <li style="font-family: 'Courier New', Courier, monospace;" , style="color: hsl(120, 100%, 25%);">Made by Anmol Subedi</li>
+          </ul>
+        </nav>
+
+
+      <div class="background-three">
+        <div class="link-container">
+          <a class="link-three" >QR</a>
+        </div>
+      </div>
+      <div class="background-two">
+        <div class="link-container">
+        <a class="link-two" >.</a>
+      </div>
+      </div>
+      <div class="background-three">
+        <div class="link-container">
+        <a class="link-three">CODE</a>
+        </div>
+      </div>
+
+      
+    <div class="container">   
+    <p>Enter Your Text or URL</p>
+    <input type="text" placeholder="Text or URL" id="qrText">
+    
+        <div id="imgBox">
+            <img src="" id="qrImage">
+        </div>
+    
+    <button onclick=" generateQR()">Generate QR Code</button>
+    <span style="font-family: 'Courier New', Courier, monospace;" >Made by <a href="index.html">Anmol Subedi</a></span>
+    </div>
+    <script>
+
+        let imgBox = document.getElementById("imgBox");
+        let qrImage = document.getElementById("qrImage");
+        let qrText = document.getElementById("qrText");
+        
+
+
+        function generateQR(){
+            if(qrText.value.length > 0){
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+            imgBox.classList.add("show-img");
+        }else{
+            qrText.classList.add('error');
+            setTimeout(()=>{
+                qrText.classList.remove('error');
+            },1000);
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+.blob-blob {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vmin;
+    aspect-ratio: 1/1;
+    z-index: -1;
+    animation: blob_blobanim__bRmJ6 5s ease-in-out infinite alternate;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05), inset -20px -20px 25px hsla(0, 0%, 100%, 0.9)
+}
+
+.dark .blob-blob {
+    background-color: hsla(0, 0%, 100%, 0.13)
+}
+
+.blob-blob {
+    background-color: hsla(0, 0%, 85%, 0.6)
+}
+
+@keyframes blob_blobanim__bRmJ6 {
+    0% {
+        border-radius: 68% 21% 68% 25%/76% 21% 44% 29%
+    }
+    50% {
+        border-radius: 50% 65% 43% 41%/70% 53% 24% 54%
+    }
+    to {
+        border-radius: 45% 99% 98% 77%/76% 97% 53% 21%
+    }
+}
